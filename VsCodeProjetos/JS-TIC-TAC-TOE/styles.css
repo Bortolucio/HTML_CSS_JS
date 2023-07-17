@@ -1,0 +1,150 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+:root{
+    --cell-size: 100px; /*tamanho das celulas*/
+    --mark-size: calc(var(--cell-size)* .9); /* tamanho da celula de marcação X ou O em 90%*/
+}
+
+body{
+    margin: 0;
+}
+
+.board{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto) /* forma o tabuleiro 3x3 */
+}
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    /*background-color: black; provisório para visualizar as celulas do tabuleiro */
+    border: 1px solid black; /*borda do tabuleiro*/
+    display: flex; /*exibe marcador no tabuleiro X ou O */
+    justify-content: center; /*exibe marcador no tabuleiro X ou O */
+    align-items: center; /*exibe marcador no tabuleiro X ou O */
+    position: relative; /* 2-ajusta o x formado por / e \ para ficar centralizada a cruz, combinanco com relativo acima*/
+    cursor: pointer; /*aparece um cursor no tabuleiro*/
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none; /* remove borda de cima do tabuleiro*/
+}
+
+.cell:nth-child(3n +1){ 
+    border-left: none; /* remove borda lateral direita do tabuleiro*/
+}
+
+.cell:nth-child(3n +3){
+    border-right: none; /* remove borda da lateral esquerda do tabuleiro*/
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7){
+    border-bottom: none; /* remove borda de baixo do tabuleiro*/
+}
+
+.cell.x,
+.cell.circle {
+    cursor: not-allowed; /*exibe proibido quando cursor passar em campo já marcado com X ou O*/
+}
+
+.cell.x::before,
+.cell.x::after,
+.cell.circle::before{
+    background-color: black;
+}
+
+.board.x .cell:not(.x):not(.circle):hover::before, /*efeito hover somente em celula vazia */
+.board.x .cell:not(.x):not(.circle):hover::after,
+.board.circle .cell:not(.x):not(.circle):hover::before {
+    background-color: lightgray; /*cor mais clara antes de clicar, EFEITO HOVER */
+}
+
+.cell.x::before,
+.cell.x::after, 
+.board.x .cell:not(.x):not(.circle):hover::before, /*efeito hover antes de clicar em celula vazia*/
+.board.x .cell:not(.x):not(.circle):hover::after {
+    content: '';
+    position: absolute;                     /* 1-ajusta o x formado pro / e \ para ficar centralizada a cruz, combinanco com relativo acima*/
+    width:calc(var(--mark-size)* .15); 
+    height: var(--mark-size);               /* o X será do tamanho do campo de marcação do tabuleiro*/
+    /*background-color: black; /*não pode ter a cor definida aqui para que efeito hover com cor mais clara funcione*/
+}   /* codigo acima para criar o x com css para funcionar em qualquer browser. A letra x pode não funcionar muito bem*/
+
+.cell.x::before,
+.board.x .cell:not(.x):not(.circle):hover::before {
+    transform: rotate(45deg); /* o X de marcação são duas barras com 45º(/) e -45º(\) de inclinação*/
+}
+
+.cell.x::after,
+.board.x .cell:not(.x):not(.circle):hover::after {
+    transform: rotate(-45deg); /* o X de marcação são duas barras com 45º(/) e -45º9\) de inclinação*/
+}
+
+
+.cell.circle::before, /*construção da marcação O com CSS */
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::before, /*hover para círculo somente em celula vazia*/
+.board.circle .cell:not(.x):not(.circle):hover::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%; /* formação do circulo sólido*/
+}
+
+.cell.circle::before,
+.board.circle .cell:not(.x):not(.circle):hover::before{
+    width:calc(var(--mark-size)* .9);
+    height: calc(var(--mark-size)* .9); /* 90X do tamanho para um melhor visual */
+    /*background-color: black; /*para o efeito hover funcionar em cor mais clara, não pode ter a cor definida aqui*/
+}
+
+.cell.circle::after,
+.board.circle .cell:not(.x):not(.circle):hover::after{
+    width:calc(var(--mark-size)* .6);
+    height: calc(var(--mark-size)* .6);
+    background-color: white; /* circulo interno branco para formar o anel de marcação O*/
+}
+
+.winning-message { /*exibe mensagem ao finalizar o jogo*/
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9); /* opacidade em 90%*/
+ 
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    flex-direction: column; /* o texto final de jogo e o botão de reset ficam em coluna*/
+}
+
+.winning-message button {
+    font-size: 3rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 0.25em .5em;
+    cursor: pointer;
+}
+
+.winning-message button:hover {
+    background-color: black;
+    color: white;
+    border-color: white;
+}
+
+.winning-message.show {
+    display: flex;
+}
