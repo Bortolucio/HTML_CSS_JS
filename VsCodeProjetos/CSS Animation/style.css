@@ -1,0 +1,26 @@
+
+body{
+    margin: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+.wrapper {
+    display: block;
+    margin-bottom: 75px;
+}
+.box {
+    background-color: #3cf;
+    border-radius: 5px;
+    width: 100px;
+    height: 75px;
+    /*transition-property: all; /*primeiro a propriedade da transição */
+    /*transition-duration: 1s;  /*depois o tempo de transição*/
+    transition: all, 1s; /* alternativa comentada acima de fazer a mesma coisa*/
+    
+}
+/*hover event*/
+.box:hover {
+    background-color: #069;
+    width: 200px;
+
+}
