@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>Transform: Translate CSS</title>
+    <style>
+       .box {
+        border-radius: 3px;
+        width: 100px;
+        height: 100px;
+        margin: 100px;
+        position:absolute;
+        transition: transform 1s;
+       }
+       .b1 {
+        background-color: #00ddf4;
+       }
+       .b2 {
+        background-color: #f9f871;
+       }
+       .b2:hover {
+        transform: translate(35px, 20px);
+       }
+       
+    </style>
+</head>
+<body>
+   <div class="box b1">oculto</div>
+   <div class="box b2"></div>
+</body>
+</html>
