@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>Animação CSS</title>
+    <!--O style colocar separado do HTML-->
+    <style>
+        .box{
+    background-color: #9173ca;
+    border-radius: 5% 50% 50% 50%;
+    width: 100px;
+    height: 100px;
+    margin: 100px;
+    transition: all 2s;
+    transition-timing-function: ease-in-out;
+}
+.box:hover {
+    transform: rotate(-90deg); 
+    background-color: #364149;
+}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
