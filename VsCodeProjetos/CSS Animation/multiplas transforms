@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>Rotação fora de centro CSS</title>
+    <style>
+        .drop {
+            background-color: #00ebd9;
+            width: 100px;
+            height: 100px;
+            margin: 100px;
+            border-radius: 50% 5% 50% 50%;
+            transition: all 2s;
+            transition-timing-function: ease-in-out;
+        }
+        .drop:hover {
+            background-color: #f9f871;
+            transform: rotate(90deg) scale(1.5) skew(30deg) translateX(60px) ; /* a ordem altera o resultado*/
+        }
+        .drop.d2:hover {
+            background-color: #08574c;
+            transform:  scale(1.5) skew(30deg) translateX(60px) rotate(90deg) ; /*a ordem altera o resultado*/
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="drop"></div>
+    <div class="drop d2"></div>
+</body>
+</html>
