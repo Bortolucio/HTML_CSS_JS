@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel = "stylesheet" href="style.css">-->
-    <title>Rotação fora de centro CSS</title>
+    <title>Multiplas transforms em CSS</title>
     <style>
         .drop {
             background-color: #00ebd9;
