@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>Rotação fora de centro CSS</title>
+    <style>
+        .shape {
+            background-color: #006593;
+            border-radius: 6px 50%;
+            width: 35px;
+            height: 35px;
+            margin: 70px auto;
+            transition: transform 2s;
+        }
+        .shape:hover {
+            transform: rotate(720deg);
+        }
+        .s2 {
+            background-color: #d470ce;
+            transform-origin: right bottom; /*rotação fora de centro*/
+        }
+        .s3 {
+            background-color: #73d470;
+            transform-origin: left bottom; /*rotação fora de centro*/
+        }
+        .s4 {
+            background-color: #d4a070;
+            transform-origin: 80% 20%; /*rotação fora de centro*/
+        }
+        .s5 {
+            background-color: #271402;
+            transform-origin: 200% 50%; /*rotação fora de centro*/
+        }
+        .s6 {
+            background-color: #119bdbc2;
+            transform-origin: 50% 50%; /*rotação no centro do objeto*/
+        }
+       
+    </style>
+</head>
+<body>
+   <div class="shape"></div>
+   <div class="shape s2"></div>
+   <div class="shape s3"></div>
+   <div class="shape s4"></div>
+   <div class="shape s5"></div>
+   <div class="shape s6"></div>
+</body>
+</html>
