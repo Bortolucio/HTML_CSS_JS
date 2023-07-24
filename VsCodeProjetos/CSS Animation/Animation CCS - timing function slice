@@ -15,7 +15,6 @@
             display: block;
             margin-bottom: 75px;
         }
-
         .sphere {
             border-radius: 50%;
             width: 25px;
@@ -26,35 +25,29 @@
             position: relative;
             animation-name: slide;
             animation-duration: 2.5s;
-            
+            animation-timing-function: ease-in-out;  
         }
         .s1 {
-            animation-timing-function: ease-in-out;
             animation-delay: 0.2s;
         }
         .s2 {
             background-color: #47dc80;
-            animation-timing-function: ease-in-out;
             animation-delay: 0.4s;
         }
         .s3 {
             background-color: #f4e338;
-            animation-timing-function: ease-in-out;
             animation-delay: 0.6s;
         }
         .s4 {
             background-color: #f98320;
-            animation-timing-function: ease-in-out;
             animation-delay: 0.8s;
         }
         .s5 {
             background-color: #da2a79;
-            animation-timing-function: ease-in-out;
             animation-delay: 1s;
         }
         .s6 {
             background-color: #5943d2;
-            animation-timing-function: ease-in-out;
             animation-delay: 1.2s;
         }
         @keyframes slide {
