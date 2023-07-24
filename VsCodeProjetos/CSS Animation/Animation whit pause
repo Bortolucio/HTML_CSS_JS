@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>Animation fill mode</title>
+    <!--COLOCAR O style NO ARQUIVO style.css-->
+    <style>
+        body {
+            background: #8fd5d5;
+            font-family: Helvetica, sans-serif;
+        }
+        .starburst{
+            font-size: 2em;
+            background: #202020;
+            width: 2.5em;
+            height: 2.5em;
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            padding: .5em;
+            margin-top: -1.25em;
+            margin-left: -1,25em;
+            animation-name: spinner;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            
+        }
+        .starburst:hover { /*pausa a animação quando passa o mouse sobre o elemento.*/
+            animation-play-state: paused;
+        }
+        .starburst { /*centralização do texto no elemento*/
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .starburst:before,
+        .starburst::after { /*três quadrados formando a estrela*/
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            z-index: -1;
+            transform: rotate(30deg); /* segundo quadrado para formar a estrela*/
+        }
+        .starburst:after {
+            transform: rotate(-30deg); /*terceiro quadrado para formar a estrela*/
+        }
+        @keyframes spinner {
+            to {
+                transform: rotate(1turn); /*animação de rotação */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="starburst">Special</div>
+</body>
+</html>
