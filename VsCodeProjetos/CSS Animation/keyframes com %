@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>keyframes com porcentagem</title>
+    <!--COLOCAR O style NO ARQUIVO style.css-->
+    <style>
+        body {
+            background: #8fd5d5;
+            font-family: Helvetica, sans-serif;
+            margin: 5em;
+        }
+        .element {
+            width: 200px;
+            height: 200px;
+            margin: 200px auto;
+            background-color: #008e9b;
+            animation-name: changer;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes changer { /*pode-se adicionar % entre virgulas e na mesma{} para alterar o efeito da animação*/
+            0% {
+                transform: scale(.3);
+                background-color: #00be9b;
+                border-radius: 100%;
+            }
+            50% {
+                background-color: black;
+                transform: scale(2);
+            }
+            100% {
+                transform: scale(1.5);
+                background-color: f9f871;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="element"></div>
+</body>
+</html>
