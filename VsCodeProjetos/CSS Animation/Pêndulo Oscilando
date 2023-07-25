@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>pêndulos oscilando</title>
+    <!--COLOCAR O style NO ARQUIVO style.css-->
+    <style>
+        body {
+            margin: 20px 280px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            background-color: rgb(213, 243, 253);
+        }
+
+        .wrap {
+            display:block;
+            margin-bottom: 30px; 
+            transform: perspective(350px) rotateX(45deg);
+        }
+        .freq {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin: 2px;
+            transition: margin 2s;
+            background-color: #3cf;
+            box-sizing: border-box;
+            box-shadow: inset -30px -20px 60px rgba(0, 0, 0, 0.479);
+            position: relative;
+            text-align: center;
+            line-height: 2;
+            animation-name: slide;
+            animation-direction: alternate;
+            animation-iteration-count: 100;
+            animation-timing-function: ease-in-out;
+            animation-delay: 1s; 
+        }
+        
+        /* FUNÇÃO PÊNDULO L(n) = g(tmax/2*pi(k+n+1))^2 g=gravidade n=nº de pêndulos e k = 50 */
+        /* pode simplificar a função para  [t = 1(2pi(n))^2] */
+        .f1 {
+            animation-duration: calc(1s*.9738675857);
+        }
+        .f2 {
+            background-color: #47dc80;
+            animation-duration: calc(1s*.9367712982);
+        }
+        .f3 {
+            background-color: #f4e338;
+            animation-duration: calc(1s*.9017549272);
+        }
+        .f4 {
+            background-color: #f98320;
+            animation-duration: calc(1s*.8686658403);
+        }
+        .f5 {
+            animation-duration: calc(1s*.8373651539);
+        }
+        .f6 {
+            background-color: #47dc80;
+            animation-duration: calc(1s*.8077262724);
+        }
+        .f7 {
+            background-color: #f4e338;
+            animation-duration: calc(1s*.7796336074);
+        }
+        .f8 {
+            background-color: #f98320;
+            animation-duration: calc(1s*.7529814478);
+        }
+        .f9 {
+            animation-duration: calc(1s*.7276729648);
+        }
+        .f10 {
+            background-color: #47dc80;
+            animation-duration: calc(1s*.7036193307);
+        }
+        .f11 {
+            background-color: #f4e338;
+            animation-duration: calc(1s*.6807389386);
+        }
+        .f12 {
+            background-color: #f98320;
+            animation-duration: calc(1s*.6589567093);
+        }
+        .f13 {
+            background-color: #643209;
+            animation-duration: calc(1s*.6382034745);
+        }
+        @keyframes slide {
+            from {
+                left: 0;
+            }
+            to{
+                left: 300px;
+            } 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="freq f1">1</div>
+        <div class="freq f2">2</div>
+        <div class="freq f3">3</div>
+        <div class="freq f4">4</div>
+        <div class="freq f5">5</div>
+        <div class="freq f6">6</div>
+        <div class="freq f7">7</div>
+        <div class="freq f8">8</div>
+        <div class="freq f9">9</div>
+        <div class="freq f10">10</div>
+        <div class="freq f11">11</div>
+        <div class="freq f12">12</div>
+        <div class="freq f13">13</div>
+    </div>
+</body>
+</html>
