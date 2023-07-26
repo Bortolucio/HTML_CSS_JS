@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>pêndulos oscilando</title>
+    <!--COLOCAR O style NO ARQUIVO style.css-->
+    <style>
+        body {
+            margin: 10px 400px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            background-color: rgba(31, 189, 241, 0.384);
+        }
+
+        .wrap {
+            width: 440px;
+            height: 500px;
+            display:block;
+            background-color: rgb(245, 245, 245);
+            margin-bottom: 5px; 
+            transform: perspective(350px) rotateX(30deg);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Configuração da sombra */
+        }
+        .freq {
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            margin: 3px;
+            transition: margin 2s;
+            background-color: #3cf;
+            box-sizing: border-box;
+            box-shadow: inset -30px -20px 60px rgba(0, 0, 0, 0.479);
+            position: relative;
+            text-align: center;
+            line-height: 2;
+            animation-name: slide;
+            animation-direction: alternate;
+            animation-iteration-count: 200;
+            animation-timing-function: ease-in-out;
+            animation-delay: 1s; 
+        }
+        
+        /* FUNÇÃO PÊNDULO [t=2pi*(l/g)^(1/2)] 
+         A logica do período foi considerada um tempo de 16 segundos onde o pêndulo
+         mais rápido oscila 10x em 16 segundos e o mais lento, 8x em 16 segundos, ou seja,
+         período rápido é 1,6s e o lento 2s. Fazendo elemento final menos inicial temos 14 
+         acréscimos de tempo para realizar. 2/14=0,1428571429. Realizado o acréscimo de 2/14
+         a cada elemento para oscilar mais lento. Não precisa realizar no primeiro pelo mesmo
+         motivo que não precisa esperar 8horas para tomar o primeiro medicamento. Por esse 
+         motivo que é realizado mais 14 acrécimos e não 15. Se for menos elementos ou mais
+         deve usar o mesmo raciocínio. 
+         Como ficou lento, foi usado o calc 0.5s*tempo para acelerar a oscilação. 
+         */
+        .f1 {
+            animation-duration: calc(.5s*1.6);
+        }
+        .f2 {
+            background-color: #47dc80;
+            animation-duration: calc(.5s*1.623188406);
+        }
+        .f3 {
+            background-color: #f4e338;
+            animation-duration: calc(.5s*1.647058824);
+        }
+        .f4 {
+            background-color: #f98320;
+            animation-duration: calc(.5s*1.671641791);
+        }
+        .f5 {
+            animation-duration: calc(.5s*1.696969697);
+        }
+        .f6 {
+            background-color: #47dc80;
+            animation-duration: calc(.5s*1.723076923);  
+        }
+        .f7 {
+            animation-duration: calc(.5s*1.75);
+        }
+        .f8 {
+            background-color: #47dc80;
+            animation-duration: calc(.5s*1.777777778);
+        }
+        .f9 {
+            background-color: #f4e338;
+            animation-duration: calc(.5s*1.806451613);
+        }
+        .f10 {
+            background-color: #f98320;
+            animation-duration: calc(.5s*1.836065574);
+        }
+        .f11 {
+            animation-duration: calc(.5s*1.866666667);
+        }
+        .f12 {
+            background-color: #47dc80;
+            animation-duration: calc(.5s*1.898305058);  
+        }
+        .f13 {
+            animation-duration: calc(.5s*1.931034483);
+        }
+        .f14 {
+            background-color: #47dc80;
+            animation-duration: calc(.5s*1.964912281);
+        }
+        .f15 {
+            background-color: #f4e338;
+            animation-duration: calc(.5s*2);
+        }
+        @keyframes slide {
+            from {
+                left: 0;
+            }
+            to{
+                left: 400px;
+            } 
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="freq f1">1</div>
+        <div class="freq f2">2</div>
+        <div class="freq f3">3</div>
+        <div class="freq f4">4</div>
+        <div class="freq f5">5</div>
+        <div class="freq f6">6</div>
+        <div class="freq f7">7</div>
+        <div class="freq f8">8</div>
+        <div class="freq f9">9</div>
+        <div class="freq f10">10</div>
+        <div class="freq f11">11</div>
+        <div class="freq f12">12</div>
+        <div class="freq f13">13</div>
+        <div class="freq f14">14</div>
+        <div class="freq f15">15</div>
+    </div>
+</body>
+</html>
