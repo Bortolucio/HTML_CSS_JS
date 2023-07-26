@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>card flip</title>
+    <!--COLOCAR O style NO ARQUIVO style.css-->
+    <style>
+        body {
+            font-family: "Open Sans", "Helvetica Neue", sans-serif;
+        }
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 340px;
+            margin: -150px;
+            height: 480px;
+        }
+        .content {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0 0 12px rgba(0,0,0,.5);
+            border-radius: 8px;
+            border: solid 3px #6cf;
+            transition: transform 0.5s; /* delay de retorno do fliping back após afastar o cursor */
+            transform-style: preserve-3d; /* elemento que oculta o lado quando virar*/
+            /*precisa implementar backface-visibility junto para funcionar*/
+        }
+        .card:hover .content {
+            transform: rotateY(180deg); /* gira o card em 180 graus ao aproximar o cursor*/
+            transition: transform 1s;
+        }
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            color: #fff;
+            text-align: center;
+            font-size: 34px;
+            border-radius: 5px;
+            backface-visibility: hidden; /*para ocultar o lado apos a virada e não visualizar do avesso*/
+            /*precisa adicionar a regra transform-style: preserve-3d para funcionar o efeito*/
+        }
+        .front {
+            background: url(https://img.freepik.com/vetores-gratis/cartao-de-jogo-as-de-ouros-isolado_1308-79356.jpg?w=360&t=st=1690400955~exp=1690401555~hmac=e2feff6045a857d52b9354c5df5f9e8e72b054c012b9999904ccc0eba2c4a860) no-repeat;
+            line-height: 100px;
+        }
+        .back {
+            background: url(https://upload.wikimedia.org/wikipedia/commons/8/8b/Florence_La_Badie_M.J._Moriarty_Playing_Card.jpg) no-repeat;
+            line-height: 100px;
+            transform: rotateY(180deg);
+        }
+
+    </style>
+</head>
+<body>
+    <aside class="card">
+        <div class="content">
+            <div class="front">Frente</div>
+            <div class="back">Verso</div>
+        </div>
+    </aside>
+    
+</body>
+</html>
