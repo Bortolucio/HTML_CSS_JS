@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>multiple animation</title>
+    <!--COLOCAR O style NO ARQUIVO style.css-->
+    <style>
+        .wrap {
+            width: 90%;
+            margin: 20px auto;
+        }
+        .ground {
+            border-bottom: solid 2px #ccc;
+            position: relative;
+            top: 300px; /*linha no final da animação*/
+        }
+        .circ {
+            background-color: #66CCFF;
+            border-radius: 50%;
+            margin: 2em 2em 0;
+            display: inline-block;
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .c1 {
+            animation: 
+                grow 1.5s ease,
+                drop 2s,
+                colorize 1s;
+        }
+        .c2{
+            background-color: #15EDE2;
+            animation: 
+                drop 2s forwards,
+                grow 2s 2s, /*grow 2s e delay 2s*/
+                colorize 1s 4s forwards; /* depois do tempo de cima vai mudar a cor e manter*/
+        }
+        .c3 {
+            background-color: #ff88a4;
+            animation: 
+                colorize 2s 1s forwards,
+                drop 1s 2s,
+                grow 1s 2s;
+        }
+        @keyframes grow {
+            0%, 100% {transform: scale(1);}
+            50% {transform: scale(2);} 
+        }
+        @keyframes drop {
+            0% {top:0;}
+            100% {top: 300px;}
+        }
+        @keyframes colorize {
+            100% {background-color: #F9F871;}
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="circ c1"></div>
+        <div class="circ c2"></div>
+        <div class="circ c3"></div>
+        <div class="ground"></div>
+    </div>
+</body>
+</html>
