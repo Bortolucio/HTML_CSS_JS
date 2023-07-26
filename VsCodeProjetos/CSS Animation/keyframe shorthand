@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>keyframe shorthand</title>
+    <!--COLOCAR O style NO ARQUIVO style.css-->
+    <style>
+        .wrap {
+            width: 90%;
+            margin: 20px auto;
+        }
+        .ground {
+            border-bottom: solid 2px #ccc;
+            position: relative;
+            top: 300px; /*linha no final da animação*/
+        }
+        .circ {
+            background-color: #66CCFF;
+            border-radius: 50%;
+            margin: 2em 2em 0;
+            display: inline-block;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            animation-name: bounce1;
+            animation-duration: 3s;
+        }
+        .c1 {
+            animation-name: bounce1;
+            animation-duration: 3s;
+            animation-iteration-count: 10;
+            animation-direction: alternate;
+            animation-timing-function: ease-out;
+            animation-fill-mode: forwards;
+            animation-delay: 1.5s;
+        }
+        .c2{
+            animation: bounce2 3s ease-out 1.5s 10 alternate forwards;
+            background-color: #15ede2;
+            /* Ordem pref [animation-name] [animation-duration] [animation-timing-function]
+            [animation-delay] [animation-iterration-count] [animation-direction]
+            [animation-fill-mode] [animation-play-state];*/
+            /*quando tem [animation-duration] e [animation-delay] , seguir essa ordem */
+        }
+        .c3 {
+            animation: bounce2 2s cubic-bezier(0,1.61,.88,-1.35) 2s 5 alternate both;
+            background-color: #ff88a4;
+        }
+        @keyframes bounce1 {
+            0%, 100% {top: 0;} /*início da animação*/
+            50% {top: 300px;} /*final da animação*/
+        }
+        @keyframes bounce2 {
+            0% {top:0;}
+            50%, 68%, 78%, 100% {top: 300px;}
+            60% {top: 240px;}
+            74% {top:270px;}
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="circ c1"></div>
+        <div class="circ c2"></div>
+        <div class="circ c3"></div>
+        <div class="ground"></div>
+    </div>
+</body>
+</html>
