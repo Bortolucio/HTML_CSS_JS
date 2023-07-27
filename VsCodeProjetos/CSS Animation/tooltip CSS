@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="style.css">-->
+    <title>card flip</title>
+    <!--COLOCAR O style NO ARQUIVO style.css-->
+    <style>
+       body {
+        font-family: "Open Sans", "Helvetica Neue", sans-serif;
+       }
+       ul {
+        margin: 0;
+        padding: 0;
+        position: relative;
+       }
+       .imgGallery li {
+        width: 700px;
+        height: 412px;
+        position: relative;
+        list-style: none;
+        overflow: hidden;
+        margin: 20px;
+       }
+       .imgGallery li:hover .tooltip {
+        animation: tooltip 1.5s forwards;
+        
+        display: block;
+       }
+       .tooltip {
+        position: absolute;
+        bottom: 40px;
+        left: 0;
+        background-color: rgba(255,255,255,.8);
+        border-radius: 0 15px 15px 0;
+        box-shadow: 3px 3px 4px 1px rgba(0,0,0,.4);
+        color: rgb(0, 165, 248);
+        display: none; /*oculta o tooltip para aparecer somente quando desejado*/
+        max-width: 75%;
+       }
+       .tooltip h1 {
+        line-height: 1;
+        padding: 5px 30px;
+       }
+       .tooltip p { /* regra para o parágrafo*/
+        padding: 0 30px 5px;
+
+       }
+       @keyframes tooltip {
+        0% {
+            transform: translateX(-400px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+       }
+
+    </style>
+</head>
+<body>
+    <ul class="imgGallery">
+        <li>
+            <a href="#"><img src=https://img.freepik.com/fotos-gratis/nadar-com-tartarugas-marinhas-em-recife-tropical-gerado-por-ia_188544-30996.jpg?w=740&t=st=1690403471~exp=1690404071~hmac=5945ba5866ed6815e1968830ff038634e4d2eaef7bdda2e60944d0179ff83019 alt="Primeira imagem"></a>
+            <div class="tooltip">
+                <h1>Tartaruga Marinha</h1>
+            </div>
+        </li>
+        <li>
+            <a href="#"><img src=https://img.freepik.com/fotos-gratis/close-de-uma-arraia-com-seu-bebe-nadando-debaixo-d-agua-com-outros-peixes_181624-11384.jpg?w=740&t=st=1690404035~exp=1690404635~hmac=bf389013254bed276a70e3f515948029d8b58a8e6f0877a1efdc17592b30e549 alt="Segunda imagem"></a>
+            <div class="tooltip">
+                <h1>Raia nadando </h1>
+                <p>Raia ou Arraia são nomes daqueles famosos peixes cartilaginosos marinhos.
+                Ambas as formas existem e estão registradas no Vocabulário Ortográfico 
+                da Língua Portuguesa (Volp), embora a mais usada pelos especialistas seja raia.</p>
+            </div>
+        </li>
+    </ul>
+    
+</body>
+</html>
