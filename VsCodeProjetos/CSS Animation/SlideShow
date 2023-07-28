@@ -1,1 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel = "stylesheet" href="css/slideShow.css" type="text/css">-->
+    <title>slideShow</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+.slider {
+    background: #000000;
+    border: 15px solid #5dd3f1;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.7);
+    height: 543px;
+    width: 740px;
+    margin: 40px auto 0;
+    overflow: visible;
+    position: relative;
+}
+.mask {
+    height: 518px;
+    overflow: hidden;
+    
+}
 
+.slider ul { /* corrigindo gosht do fundo da animação*/
+    position: relative;
+}
+.slider li {
+    width: 740px;
+    height: 518px;
+    position: absolute;
+    list-style: none;
+} 
+.slider li#sg01 {
+    animation: c01 25s linear infinite;
+}
+.slider li#sg02 {
+    animation: c02 25s linear infinite;
+}
+.slider li#sg03 {
+    animation: c03 25s linear infinite;
+}
+.slider li#sg04 {
+    animation: c04 25s linear infinite;
+}
+.slider li#sg05 {
+    animation: c05 25s linear infinite;
+}
+/*animations 4secs ciclos*/
+@keyframes c01 {
+    0%   {top:25px;}
+    4%   {top:25px;}
+    16%  {top:  25px; opacity: 1; z-index: 0;}
+    20%  {top: 518px; opacity: 0; z-index: 0;}
+    21%  {top:-518px; opacity: 0; z-index:-1;}
+    92%  {top:-518px; opacity: 0; z-index: 0;}
+    96%  {top:-518px; opacity: 0;}
+    100% {top:0px; opacity: 1;}
+}
+@keyframes c02 {
+    0%   {top:-518px; opacity: 0;}
+    16%  {top:-518px; opacity: 0;}
+    20%  {top:  25px; opacity: 1;}
+    24%  {top:  25px; opacity: 1;}
+    36%  {top:  25px; opacity: 1; z-index: 0;}
+    40%  {top: 518px; opacity: 0; z-index: 0;} /*inicia a saída da imagem*/
+    41%  {top:-518px; opacity: 0; z-index:-1;}
+    100% {top:-518px; opacity: 0; z-index:-1;}
+}
+@keyframes c03 {
+    0%   {top:-518px; opacity: 0;}
+    36%  {top:-518px; opacity: 0;}
+    40%  {top:  25px; opacity: 1;}
+    44%  {top:  25px; opacity: 1;}
+    56%  {top:  25px; opacity: 1;}
+    60%  {top: 518px; opacity: 0; z-index: 0;} 
+    61%  {top:-518px; opacity: 0; z-index:-1;}
+    100% {top:-518px; opacity: 0; z-index:-1;}
+}
+@keyframes c04 {
+    0%   {top:-518px; opacity: 0;}
+    56%  {top:-518px; opacity: 0;}
+    60%  {top:  25px; opacity: 1;}
+    64%  {top:  25px; opacity: 1;}
+    76%  {top:  25px; opacity: 1;z-index: 0;}
+    80%  {top: 518px; opacity: 0; z-index: 0;} 
+    81%  {top:-518px; opacity: 0; z-index:-1;}
+    100% {top:-518px; opacity: 0; z-index:-1;}
+}
+@keyframes c05 {
+    0%   {top:-518px; opacity: 0;}
+    76%  {top:-518px; opacity: 0;}
+    80%  {top:   0px; opacity: 1;}
+    84%  {top:   0px; opacity: 1;}
+    96%  {top:   0px; opacity: 1; z-index: 0;}
+    100% {top: 518px; opacity: 0; z-index: 0;}
+}
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section class="contentSlider">
+            <article class="slider">
+                <div class="mask">
+                    <ul class="slideShow">
+                        <li class="anim" id="sg01">
+                            <figure>
+                                <a href="#"><img src="https://img.freepik.com/vetores-gratis/fluxo-de-design-de-codigo-binario_53876-97406.jpg?w=740&t=st=1690464626~exp=1690465226~hmac=47ba2bd55fe162fc776f38025a4785de3bf86dd8457730c526be13ad0254680b" alt=""></a>
+                            </figure>
+                        </li>
+                        <li class="anim" id="sg02">
+                            <figure>
+                                <a href="#"><img src="https://img.freepik.com/vetores-gratis/tecnologia-de-rede-futurista-azul_53876-97395.jpg?w=740&t=st=1690462683~exp=1690463283~hmac=dc7a581ca3ea21f2f1478243543dbe299645c60f7c0c784269cc1e351d4aa334" alt=""></a>
+                            </figure>
+                        </li>
+                        <li class="anim" id="sg03">
+                            <figure>
+                                <a href="#"><img src="https://img.freepik.com/vetores-gratis/fundo-digital-de-codigo-binario-de-estilo-de-matriz-com-numeros-caindo_1017-25336.jpg?w=740&t=st=1690462722~exp=1690463322~hmac=81c1d8d9bccdab3f1b59611d22d44890f6ea9dce248c6e6835dce3f4e9ff08de" alt=""></a>
+                            </figure>
+                        </li>
+                        <li class="anim" id="sg04">
+                            <figure>
+                                <a href="#"><img src="https://img.freepik.com/vetores-gratis/fluxo-de-design-de-codigo-binario_53876-118589.jpg?w=740&t=st=1690464586~exp=1690465186~hmac=d3b083fab7b35fdc58b5f39aa997a3851f8ae8c5a8d27e2ac8880adc77827fd6" alt=""></a>
+                            </figure>
+                        </li>
+                        <li class="anim" id="sg05">
+                            <figure>
+                                <a href="#"><img src="https://img.freepik.com/fotos-gratis/fundo-abstrato-codigo-binario_1048-11344.jpg?w=740&t=st=1690462639~exp=1690463239~hmac=6770f1e0fa7f458997c5a0336e8105fadabbc272466be9155f75f01b4c279499" alt=""></a>
+                            </figure>
+                        </li>
+                    </ul>
+                </div><!--Mask end-->
+            </article>
+        </section>
+    </main>
+
+    
+</body>
+</html>
